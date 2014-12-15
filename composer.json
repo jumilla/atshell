@@ -1,0 +1,13 @@
+{
+    "name": "jumilla/atshell",
+    "require": {
+        "symfony/console": "~2.6"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fumio Furukawa",
+            "email": "fumio@straight-spirits.com"
+        }
+    ]
+}
