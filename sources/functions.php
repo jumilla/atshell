@@ -30,6 +30,11 @@ function path_expand($path)
 	return preg_replace('/^(~)/', getenv('HOME'), $path);
 }
 
+function project_config_path()
+{
+	return atshell_path('.projects.json');
+}
+
 function project_config()
 {
 	return json_decode(file_get_contents(atshell_path('.projects.json')), true);

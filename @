@@ -1,12 +1,10 @@
 #!/usr/bin/env php
 <?php
 
-if (file_exists(__DIR__.'/vendor/autoload.php'))
-{
+if (file_exists(__DIR__.'/vendor/autoload.php')) {
 	require __DIR__.'/vendor/autoload.php';
 }
-else
-{
+else {
 	require __DIR__.'/../../autoload.php';
 }
 
@@ -23,23 +21,16 @@ function base_path()
 function atshell_path()
 {
 	if (func_num_args() == 0) {
-		if (isset($_SERVER['HOME']))
-		{
+		if (isset($_SERVER['HOME'])) {
 			return $_SERVER['HOME'].'/.atsh';
 		}
-		else
-		{
+		else {
 			return $_SERVER['HOMEDRIVE'].$_SERVER['HOMEPATH'].DIRECTORY_SEPARATOR.'.atsh';
 		}
 	}
 	else {
-		return atshell_path() . '/' . implode('/', func_get_args());;
+		return atshell_path() . '/' . implode('/', func_get_args());
 	}
 }
 
-$app = new Symfony\Component\Console\Application('Atshell', '0.0.1');
-
-$app->add(new Jumilla\Atshell\InitCommand);
-$app->add(new Jumilla\Atshell\UpCommand);
-
-$app->run();
+Jumilla\Atshell\AtShell::run();

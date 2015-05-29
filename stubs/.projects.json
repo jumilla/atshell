@@ -1,5 +1,8 @@
 {
 	"home": {
-		"path": "~"
+		"path": "~",
+		"commands": {
+			"user": "pwd"
+		}
 	}
 }
